@@ -6,6 +6,12 @@ function App() {
   const cursorRef = useRef(null);
   const followerRef = useRef(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     // Scroll Effect
@@ -136,6 +142,14 @@ function App() {
             <a href="#services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
             <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
           </div>
+          <button 
+            className="theme-toggle" 
+            onClick={() => setTheme(prev => prev === 'dark' ? 'light' : 'dark')}
+            style={{background:'transparent', border:'none', color:'var(--text-primary)', fontSize:'1.25rem', marginRight:'1rem', cursor:'none'}}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
+          </button>
           <a href="#contact" className="btn btn-primary">Get Started</a>
           <div className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <i className={isMobileMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
