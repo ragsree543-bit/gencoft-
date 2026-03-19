@@ -735,6 +735,97 @@ header.scrolled {
 }
 
 /* ==========================================================================
+   Projects Section
+   ========================================================================== */
+.projects-section {
+    padding: 8rem 0;
+    position: relative;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #0a0a0c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: var(--transition-medium);
+}
+
+[data-theme='light'] .project-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.project-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.project-desc {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-tag {
+    background: #1a1a1f;
+    color: #e4e4e7;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+[data-theme='light'] .project-tag {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.btn-project-view {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition-fast);
+    margin-top: 1rem;
+}
+
+[data-theme='light'] .btn-project-view {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-project-view:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+[data-theme='light'] .btn-project-view:hover {
+    background: rgba(0,0,0,0.02);
+}
+
+/* ==========================================================================
    CTA Section
    ========================================================================== */
 .cta-section {

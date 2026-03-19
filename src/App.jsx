@@ -1,6 +1,29 @@
 import { useEffect, useRef, useState } from 'react';
 import './index.css';
 
+const projects = [
+  {
+    title: "FindMeCourts",
+    description: "FindMeCourts is a user-friendly platform that allows you to quickly locate and book nearby tennis, pickleball, badminton courts, soccer turfs, and sports events in just three clicks.",
+    tags: ["React", "JavaScript", "jQuery", "Amazon S3", "AWS"]
+  },
+  {
+    title: "QuizWizard",
+    description: "QuizWizard is an online platform that enables users to create, share, and participate in interactive quizzes across various subjects.",
+    tags: ["React", "Emotion", "core-js", "jQuery", "Amazon S3", "AWS"]
+  },
+  {
+    title: "Strawket",
+    description: "Strawket is an extra-curricular learning platform connecting coaches and kids worldwide.",
+    tags: ["JavaScript", "React", "BootStrap", "AWS"]
+  },
+  {
+    title: "ManageUpgrades",
+    description: "ManageUpgrades is a platform that provides tools and resources for managing software updates and maintenance modes, offering solutions like a Flutter package for app updates and customizable UI components.",
+    tags: ["React.js", "Next.js", "Tailwind", "MongoDB"]
+  }
+];
+
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const cursorRef = useRef(null);
@@ -140,6 +163,7 @@ function App() {
             <a href="#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
             <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
             <a href="#services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
+            <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
             <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
           </div>
           <button 
@@ -271,6 +295,30 @@ function App() {
                 <h4>Data Analytics</h4>
                 <p>Transform raw data into actionable intelligence with our high-end visualization tools.</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" className="projects-section">
+          <div className="container">
+            <div className="text-center fade-in">
+              <h2 className="section-title">Our Projects</h2>
+              <p className="section-desc" style={{marginBottom: "3rem"}}>Featured work that showcases our expertise</p>
+            </div>
+            
+            <div className="projects-grid">
+              {projects.map((project, index) => (
+                <div key={index} className="project-card fade-in" style={{animationDelay: `${index * 0.15}s`}}>
+                  <h4 className="project-title">{project.title}</h4>
+                  <p className="project-desc">{project.description}</p>
+                  <div className="project-tags">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="project-tag">{tag}</span>
+                    ))}
+                  </div>
+                  <a href="#" className="btn-project-view">View Project</a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
