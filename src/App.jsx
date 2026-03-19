@@ -24,6 +24,27 @@ const projects = [
   }
 ];
 
+const reviews = [
+  {
+    name: "Sarah Jenkins",
+    role: "CTO at TechCorp",
+    content: "Gencoft completely revolutionized our internal workflows. Their AI solutions are top-tier and seamlessly integrated into our existing infrastructure. Highly recommended!",
+    rating: 5
+  },
+  {
+    name: "Michael Chen",
+    role: "Founder of StartupX",
+    content: "Working with Gencoft was a breeze. They delivered our MVP ahead of schedule with unparalleled aesthetics and robust cloud architecture. The best engineering team we've hired.",
+    rating: 5
+  },
+  {
+    name: "Emma Watson",
+    role: "Director of Product, CloudScale",
+    content: "The cybersecurity protocols implemented by Gencoft were exactly what we needed to secure our client data. Their team is extremely knowledgeable and highly proactive.",
+    rating: 5
+  }
+];
+
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const cursorRef = useRef(null);
@@ -164,6 +185,7 @@ function App() {
             <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
             <a href="#services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
             <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+            <a href="#reviews" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Reviews</a>
             <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
           </div>
           <button 
@@ -317,6 +339,37 @@ function App() {
                     ))}
                   </div>
                   <a href="#" className="btn-project-view">View Project</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="reviews" className="reviews-section">
+          <div className="container">
+            <div className="text-center fade-in">
+              <h2 className="section-subtitle">CLIENT SUCCESS STORIES</h2>
+              <h3 className="section-title">What Our <span className="gradient-text">Clients Say</span></h3>
+            </div>
+            
+            <div className="reviews-grid">
+              {reviews.map((review, index) => (
+                <div key={index} className="review-card glass-panel fade-in" style={{animationDelay: `${index * 0.2}s`}}>
+                  <div className="review-stars">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <i key={i} className="fas fa-star"></i>
+                    ))}
+                  </div>
+                  <p className="review-content">"{review.content}"</p>
+                  <div className="review-author">
+                    <div className="review-avatar">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="review-name">{review.name}</h4>
+                      <p className="review-role">{review.role}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

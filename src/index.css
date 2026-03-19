@@ -826,6 +826,105 @@ header.scrolled {
 }
 
 /* ==========================================================================
+   Reviews Section
+   ========================================================================== */
+.reviews-section {
+    padding: 8rem 0;
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.review-card {
+    padding: 2.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+    transition: var(--transition-medium);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='light'] .review-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.review-stars {
+    color: #f59e0b; /* Golden Yellow */
+    font-size: 1.1rem;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.review-content {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+}
+
+[data-theme='light'] .review-author {
+    border-top-color: rgba(0, 0, 0, 0.05);
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.review-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.review-role {
+    font-size: 0.9rem;
+    color: var(--accent-1);
+}
+
+/* ==========================================================================
    CTA Section
    ========================================================================== */
 .cta-section {
