@@ -287,35 +287,25 @@ function App() {
             </div>
             
             <div className="services-grid">
-              <div className="service-card glass-panel fade-in delay-1">
-                <div className="service-icon"><i className="fas fa-laptop-code"></i></div>
-                <h4>Web Engineering</h4>
-                <p>Bespoke web applications built on modern frameworks for maximum performance and unparalleled aesthetics.</p>
-              </div>
-              <div className="service-card glass-panel fade-in delay-2">
-                <div className="service-icon"><i className="fas fa-brain"></i></div>
-                <h4>Artificial Intelligence</h4>
-                <p>Integrate machine learning and predictive analytics to automate workflows and uncover valuable insights.</p>
-              </div>
-              <div className="service-card glass-panel fade-in delay-3">
-                <div className="service-icon"><i className="fas fa-cloud"></i></div>
-                <h4>Cloud Infrastructure</h4>
-                <p>Robust, scalable, and secure cloud environments engineered for enterprise-grade reliability.</p>
-              </div>
-              <div className="service-card glass-panel fade-in delay-1">
+              <div className="service-card fade-in delay-1">
                 <div className="service-icon"><i className="fas fa-mobile-alt"></i></div>
-                <h4>Mobile Experiences</h4>
-                <p>Cross-platform mobile applications designed to engage users and deliver frictionless digital journeys.</p>
+                <h4>Mobile Development</h4>
+                <p>High-performance Android & iOS apps built with the latest technologies.</p>
               </div>
-              <div className="service-card glass-panel fade-in delay-2">
+              <div className="service-card fade-in delay-2">
+                <div className="service-icon"><i className="fas fa-window-maximize"></i></div>
+                <h4>Web Applications</h4>
+                <p>Responsive and scalable web applications for modern businesses.</p>
+              </div>
+              <div className="service-card fade-in delay-3">
                 <div className="service-icon"><i className="fas fa-shield-alt"></i></div>
-                <h4>Cybersecurity</h4>
-                <p>Advanced threat protection and vulnerability assessments to keep your corporate data uncompromised.</p>
+                <h4>Security Solutions</h4>
+                <p>Robust security implementations to protect your digital assets.</p>
               </div>
-              <div className="service-card glass-panel fade-in delay-3">
-                <div className="service-icon"><i className="fas fa-chart-line"></i></div>
-                <h4>Data Analytics</h4>
-                <p>Transform raw data into actionable intelligence with our high-end visualization tools.</p>
+              <div className="service-card fade-in delay-1">
+                <div className="service-icon"><i className="fas fa-rocket"></i></div>
+                <h4>Cloud Solutions</h4>
+                <p>Scalable cloud infrastructure and deployment strategies.</p>
               </div>
             </div>
           </div>
