@@ -388,7 +388,30 @@ function App() {
         </section>
       </main>
 
-      <footer id="contact" className="footer">
+      <section id="contact" className="contact-section fade-in">
+        <div className="container">
+          <div className="contact-form-wrapper glass-card">
+            <h2 className="section-title text-center" style={{marginBottom: "2rem"}}>Contact <span className="gradient-text">Us</span></h2>
+            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" className="form-control" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" placeholder="your@email.com" className="form-control" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea id="message" placeholder="How can we help you?" className="form-control" rows="5"></textarea>
+              </div>
+              <button type="submit" className="btn btn-primary" style={{width: '100%', marginTop: '1rem', padding: '1rem', fontSize: '1.1rem'}}>Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
