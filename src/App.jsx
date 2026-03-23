@@ -231,25 +231,7 @@ function App() {
           </div>
         </section>
 
-        <section id="logos" className="logos-section">
-          <div className="container">
-            <p className="logos-title">TRUSTED BY INNOVATIVE TEAMS WORLDWIDE</p>
-            <div className="logos-track">
-              <div className="logos-list">
-                <span><i className="fab fa-aws"></i> Amazon Web Services</span>
-                <span><i className="fab fa-google"></i> Google Cloud</span>
-                <span><i className="fab fa-microsoft"></i> Microsoft Azure</span>
-                <span><i className="fab fa-github"></i> GitHub</span>
-                <span><i className="fab fa-slack"></i> Slack</span>
-                <span><i className="fab fa-aws"></i> Amazon Web Services</span>
-                <span><i className="fab fa-google"></i> Google Cloud</span>
-                <span><i className="fab fa-microsoft"></i> Microsoft Azure</span>
-                <span><i className="fab fa-github"></i> GitHub</span>
-                <span><i className="fab fa-slack"></i> Slack</span>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         <section id="about" className="about-section">
           <div className="container">
