@@ -204,6 +204,17 @@ function App() {
       </header>
 
       <main>
+        <section id="intro" className="intro-section fade-in">
+          <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <h1 className="intro-title">Gencoft Technologies</h1>
+            <p className="intro-subtitle">Our innovative solutions empower brands to scale and succeed in the digital era.</p>
+            <div className="intro-buttons">
+              <a href="#contact" className="btn btn-dark">Contact Us</a>
+              <a href="#services" className="btn btn-light">Our Services</a>
+            </div>
+          </div>
+        </section>
+
         <section id="home" className="hero">
           <div className="hero-bg"></div>
           <div className="hero-overlay"></div>
@@ -212,7 +223,6 @@ function App() {
             <p className="hero-subtitle reveal-text delay-1">Pioneering standard-defining software and AI solutions that propel your business into the next era of innovation.</p>
             <div className="hero-buttons reveal-text delay-2">
               <a href="#services" className="btn btn-primary btn-lg">Explore Solutions</a>
-              <a href="#about" className="btn btn-outline btn-lg"><i className="fas fa-play"></i> Watch Video</a>
             </div>
           </div>
           <div className="scroll-indicator">

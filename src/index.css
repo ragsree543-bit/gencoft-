@@ -14,7 +14,7 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     
-    --font-main: 'Outfit', sans-serif;
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
     
     --transition-fast: 0.2s ease;
     --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -367,6 +367,105 @@ header.scrolled {
     .mobile-menu-btn {
         display: none;
     }
+}
+
+/* ==========================================================================
+   Intro Section (Light Theme Design)
+   ========================================================================== */
+.intro-section {
+    padding: 10rem 0 6rem;
+    text-align: center;
+    background-color: #ffffff;
+    color: #111827;
+}
+
+[data-theme='dark'] .intro-section {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.intro-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+@media (min-width: 768px) {
+    .intro-title {
+        font-size: 4rem;
+    }
+}
+
+[data-theme='dark'] .intro-title {
+    color: var(--text-primary);
+}
+
+.intro-subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+[data-theme='dark'] .intro-subtitle {
+    color: var(--text-secondary);
+}
+
+.intro-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-dark {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    transition: var(--transition-medium);
+}
+
+.btn-dark:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid #e2e8f0;
+    transition: var(--transition-medium);
+}
+
+.btn-light:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+[data-theme='dark'] .btn-dark {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+[data-theme='dark'] .btn-light {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid var(--glass-border);
+}
+
+[data-theme='dark'] .btn-light:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* ==========================================================================
