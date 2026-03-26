@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Removal</title>
+</head>
+<body>
+    <input type="file" id="upload" accept="image/*">
+    <canvas id="canvas"></canvas>
+    <button id="download">Download Result</button>
+    <script>
+        const upload = document.getElementById('upload');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const download = document.getElementById('download');
+
+        upload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const img = new Image();
+                img.onload = () => {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imageData.data;
+                    
+                    // Assume top-left pixel is background color
+                    const r = data[0];
+                    const g = data[1];
+                    const b = data[2];
+                    const tolerance = 60; // Increased for greyish backgrounds
+
+                    for (let i = 0; i < data.length; i += 4) {
+                        const curR = data[i];
+                        const curG = data[i + 1];
+                        const curB = data[i + 2];
+                        
+                        // Check if current pixel color is close to the background color
+                        if (Math.abs(curR - r) < tolerance && 
+                            Math.abs(curG - g) < tolerance && 
+                            Math.abs(curB - b) < tolerance) {
+                            data[i + 3] = 0; // Set alpha to 0 (transparent)
+                        }
+                    }
+                    ctx.putImageData(imageData, 0, 0);
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        download.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'logo_transparent.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+    </script>
+</body>
+</html>

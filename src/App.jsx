@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import './index.css';
+import logoIcon from './assets/logo-icon.png';
+
+import logo from './assets/logo.png';
+
 
 const projects = [
   {
@@ -179,7 +183,12 @@ function App() {
 
       <header id="header" className={isScrolled ? "scrolled" : ""}>
         <nav className="navbar container">
-          <a href="#" className="logo">GEN<span>COFT</span></a>
+          <a href="#" className="logo">
+            <img src={logoIcon} alt="Gencoft Icon" className="logo-icon" />
+            GEN<span>COFT</span>
+          </a>
+
+
           <div className="nav-links" style={{ display: isMobileMenuOpen ? 'flex' : '', flexDirection: isMobileMenuOpen ? 'column' : '', position: isMobileMenuOpen ? 'absolute' : '', top: isMobileMenuOpen ? '100%' : '', left: isMobileMenuOpen ? '0' : '', width: isMobileMenuOpen ? '100%' : '', background: isMobileMenuOpen ? 'var(--bg-primary)' : '', padding: isMobileMenuOpen ? '2rem' : '', borderBottom: isMobileMenuOpen ? '1px solid var(--glass-border)' : '' }}>
             <a href="#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
             <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
@@ -388,7 +397,11 @@ function App() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <a href="#" className="logo">GEN<span>COFT</span></a>
+              <a href="#" className="logo">
+                <img src={logoIcon} alt="Gencoft Icon" className="logo-icon" />
+                GEN<span>COFT</span>
+              </a>
+
               <p>Elevating digital experiences through cutting-edge engineering and visionary design. We build standard-defining software.</p>
               <div className="social-links">
                 <a href="#"><i className="fab fa-twitter"></i></a>

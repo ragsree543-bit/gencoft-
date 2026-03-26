@@ -311,6 +311,9 @@ header.scrolled {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.75rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -318,6 +321,21 @@ header.scrolled {
 
 .logo span {
     color: var(--accent-1);
+}
+
+.logo-icon {
+    height: 38px;
+    width: 38px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes it circular, removing the box look */
+    mix-blend-mode: lighten;
+    filter: contrast(1.1) brightness(1.1);
+    transition: var(--transition-medium);
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
 .nav-links {
