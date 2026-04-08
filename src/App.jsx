@@ -196,6 +196,8 @@ function App() {
             <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
             <a href="#reviews" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Reviews</a>
             <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+            <a href="https://github.com/ragsree543-bit" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>GitHub</a>
+            <a href="https://gencoft.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Vercel</a>
           </div>
           <button 
             className="theme-toggle" 
@@ -406,7 +408,8 @@ function App() {
               <div className="social-links">
                 <a href="#"><i className="fab fa-twitter"></i></a>
                 <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#"><i className="fab fa-github"></i></a>
+                <a href="https://github.com/ragsree543-bit" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+                <a href="https://gencoft.vercel.app" target="_blank" rel="noopener noreferrer"><i className="fas fa-triangle"></i></a>
                 <a href="#"><i className="fab fa-instagram"></i></a>
               </div>
             </div>
