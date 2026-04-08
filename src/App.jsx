@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './index.css';
-import logoIcon from './assets/logo-icon.png';
-
+import logoInnovative from './assets/logo-innovative.png';
 import logo from './assets/logo.png';
 
 
@@ -184,8 +183,7 @@ function App() {
       <header id="header" className={isScrolled ? "scrolled" : ""}>
         <nav className="navbar container">
           <a href="#" className="logo">
-            <img src={logoIcon} alt="Gencoft Icon" className="logo-icon" />
-            GEN<span>COFT</span>
+            <img src={logoInnovative} alt="Gencoft Logo" className="logo-innovative" />
           </a>
 
 
@@ -400,8 +398,7 @@ function App() {
           <div className="footer-grid">
             <div className="footer-brand">
               <a href="#" className="logo">
-                <img src={logoIcon} alt="Gencoft Icon" className="logo-icon" />
-                GEN<span>COFT</span>
+                <img src={logoInnovative} alt="Gencoft Logo" className="logo-innovative" />
               </a>
 
               <p>Elevating digital experiences through cutting-edge engineering and visionary design. We build standard-defining software.</p>

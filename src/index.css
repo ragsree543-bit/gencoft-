@@ -313,29 +313,18 @@ header.scrolled {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1.75rem;
-    font-weight: 800;
-    letter-spacing: 1px;
 }
 
-.logo span {
-    color: var(--accent-1);
-}
-
-.logo-icon {
-    height: 38px;
-    width: 38px;
-    object-fit: cover;
-    border-radius: 50%; /* Makes it circular, removing the box look */
-    mix-blend-mode: lighten;
-    filter: contrast(1.1) brightness(1.1);
+.logo-innovative {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: screen; /* Blends the black background seamlessly */
     transition: var(--transition-medium);
 }
 
-.logo:hover .logo-icon {
-    transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+.logo:hover .logo-innovative {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -504,7 +493,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/people-working-bg.jpg');
+    background-image: url('/hero-bg-new.jpg');
     background-size: cover;
     background-position: center top;
     z-index: -2;
