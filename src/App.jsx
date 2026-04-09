@@ -51,7 +51,7 @@ const reviews = [
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
