@@ -493,7 +493,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/hero-bg-new.jpg');
+    background-image: url('/hero-bg-2d.png');
     background-size: cover;
     background-position: center top;
     z-index: -2;
