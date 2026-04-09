@@ -50,8 +50,6 @@ const reviews = [
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const cursorRef = useRef(null);
-  const followerRef = useRef(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
@@ -116,69 +114,9 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    // Custom cursor logic
-    const cursor = cursorRef.current;
-    const follower = followerRef.current;
-    
-    const matchMedia = window.matchMedia("(any-hover: hover)");
-    if (!matchMedia.matches || !cursor || !follower) return;
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let followerX = 0;
-    let followerY = 0;
-
-    const onMouseMove = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.left = `${mouseX}px`;
-      cursor.style.top = `${mouseY}px`;
-    };
-
-    let animationFrameId;
-    const updateFollower = () => {
-      followerX += (mouseX - followerX) * 0.15;
-      followerY += (mouseY - followerY) * 0.15;
-      if (follower) {
-        follower.style.left = `${followerX}px`;
-        follower.style.top = `${followerY}px`;
-      }
-      animationFrameId = requestAnimationFrame(updateFollower);
-    };
-
-    document.addEventListener("mousemove", onMouseMove);
-    updateFollower();
-
-    const handleMouseEnter = () => {
-      cursor.classList.add("hovered");
-      follower.classList.add("hovered");
-    };
-    const handleMouseLeave = () => {
-      cursor.classList.remove("hovered");
-      follower.classList.remove("hovered");
-    };
-
-    const interactiveElements = document.querySelectorAll("a, button, input, .service-card");
-    interactiveElements.forEach(el => {
-      el.addEventListener("mouseenter", handleMouseEnter);
-      el.addEventListener("mouseleave", handleMouseLeave);
-    });
-
-    return () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(animationFrameId);
-      interactiveElements.forEach(el => {
-        el.removeEventListener("mouseenter", handleMouseEnter);
-        el.removeEventListener("mouseleave", handleMouseLeave);
-      });
-    };
-  }, []);
 
   return (
     <>
-      <div className="cursor" ref={cursorRef}></div>
-      <div className="cursor-follower" ref={followerRef}></div>
 
       <header id="header" className={isScrolled ? "scrolled" : ""}>
         <nav className="navbar container">
@@ -194,8 +132,6 @@ function App() {
             <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
             <a href="#reviews" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Reviews</a>
             <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-            <a href="https://github.com/ragsree543-bit" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>GitHub</a>
-            <a href="https://gencoft.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Vercel</a>
           </div>
           <button 
             className="theme-toggle" 
@@ -405,8 +341,6 @@ function App() {
               <div className="social-links">
                 <a href="#"><i className="fab fa-twitter"></i></a>
                 <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/ragsree543-bit" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-                <a href="https://gencoft.vercel.app" target="_blank" rel="noopener noreferrer"><i className="fas fa-triangle"></i></a>
                 <a href="#"><i className="fab fa-instagram"></i></a>
               </div>
             </div>
