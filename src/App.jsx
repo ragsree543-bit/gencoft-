@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './index.css';
-import logoInnovative from './assets/logo-innovative.png';
-import logo from './assets/logo.png';
+import logoInnovative from './assets/images/logo-innovative.png';
+import logo from './assets/images/logo.png';
 
 
 const projects = [
