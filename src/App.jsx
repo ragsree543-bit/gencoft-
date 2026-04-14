@@ -27,6 +27,15 @@ const projects = [
   }
 ];
 
+const technologies = [
+  { name: "HTML5", icon: "fab fa-html5", color: "#E34F26" },
+  { name: "CSS3", icon: "fab fa-css3-alt", color: "#1572B6" },
+  { name: "BOOTSTRAP", icon: "fab fa-bootstrap", color: "#7952B3" },
+  { name: "JS", icon: "fab fa-js", color: "#F7DF1E" },
+  { name: "React", icon: "fab fa-react", color: "#61DAFB" },
+  { name: "UI/UX", icon: "fab fa-figma", color: "#F24E1E" }
+];
+
 const reviews = [
   {
     name: "Sarah Jenkins",
@@ -153,17 +162,25 @@ function App() {
 
         <section id="home" className="hero">
           <div className="hero-bg"></div>
-          <div className="hero-overlay"></div>
           <div className="container hero-content">
-            <h1 className="hero-title reveal-text">Shape The Future<br /><span className="gradient-text">With Gencoft.</span></h1>
-            <p className="hero-subtitle reveal-text delay-1">Pioneering standard-defining software and AI solutions that propel your business into the next era of innovation.</p>
-            <div className="hero-buttons reveal-text delay-2">
-              <a href="#services" className="btn btn-primary btn-lg">Explore Solutions</a>
+            <div className="hero-badge">
+              <span className="hero-badge-dot"></span>
+              Innovative IT Solutions — Trusted Worldwide
             </div>
-          </div>
-          <div className="scroll-indicator">
-            <span>Scroll Down</span>
-            <i className="fas fa-arrow-down pb-bounce"></i>
+            <h1 className="hero-title reveal-text">
+              Software solutions<br />
+              <span className="hero-accent-text">that drive results.</span>
+            </h1>
+            <p className="hero-subtitle reveal-text delay-1">We build high-performance software and AI solutions that transform your business. No guesswork — just expert engineering.</p>
+            <div className="hero-buttons reveal-text delay-2">
+              <a href="#contact" className="btn btn-primary btn-lg">Get Started →</a>
+              <a href="#services" className="btn btn-outline btn-lg">Explore Services</a>
+            </div>
+            <div className="hero-trust-row">
+              <span><i className="fas fa-check" style={{color:'var(--accent-1)'}}></i> End-to-end delivery</span>
+              <span><i className="fas fa-check" style={{color:'var(--accent-1)'}}></i> Enterprise-grade security</span>
+              <span><i className="fas fa-check" style={{color:'var(--accent-1)'}}></i> Agile & scalable</span>
+            </div>
           </div>
         </section>
 
@@ -291,7 +308,6 @@ function App() {
                 </div>
               ))}
             </div>
-          </div>
         </section>
 
         <section id="cta" className="cta-section">
@@ -301,6 +317,31 @@ function App() {
               <p>Join forces with Gencoft and accelerate your digital transformation today.</p>
               <a href="#contact" className="btn btn-primary btn-lg mt-2">Start a Project</a>
               <div className="glow-bg"></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="tech-section fade-in">
+          <div className="container">
+            <h2 className="section-title text-center">Our <span className="gradient-text">Technology</span></h2>
+            <div className="tech-grid">
+              {technologies.map((tech, index) => (
+                <div key={index} className="tech-card">
+                  <div className="tech-icon-box">
+                    <i className={tech.icon} style={{ color: tech.color }}></i>
+                  </div>
+                  <span className="tech-name">{tech.name}</span>
+                </div>
+              ))}
+              {/* Repeating for a full grid effect as seen in the image */}
+              {technologies.map((tech, index) => (
+                <div key={index + technologies.length} className="tech-card">
+                  <div className="tech-icon-box">
+                    <i className={tech.icon} style={{ color: tech.color }}></i>
+                  </div>
+                  <span className="tech-name">{tech.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
